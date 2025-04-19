@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shizen | العناية بالبشرة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo/logo.jpg" alt="Shizen Logo">
+                <span>SHIZEN</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-spa"></i> العناية بالبشرة</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-bag"></i> المنتجات</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="skin-type-section">
+        <div class="container">
+            <h2 class="section-title"><span>اكتشف منتجاتنا</span> المناسبة لبشرتك</h2>
+            <div class="skin-type-options">
+                <div class="skin-card" data-type="oily">
+                    <div class="skin-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3>بشرة دهنية</h3>
+                    <p>منتجات تنظيم الإفرازات الدهنية</p>
+                    <div class="selection-indicator"></div>
+                </div>
+                
+                <div class="skin-card" data-type="dry">
+                    <div class="skin-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>بشرة جافة</h3>
+                    <p>مرطبات عميقة للبشرة الجافة</p>
+                    <div class="selection-indicator"></div>
+                </div>
+                
+                <div class="skin-card" data-type="combination">
+                    <div class="skin-icon">
+                        <i class="fas fa-adjust"></i>
+                    </div>
+                    <h3>بشرة مختلطة</h3>
+                    <p>حلول متوازنة لكل المناطق</p>
+                    <div class="selection-indicator"></div>
+                </div>
+
+                <div class="skin-card active" data-type="bestseller">
+                    <div class="skin-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>الأكثر مبيعاً</h3>
+                    <p>منتجاتنا الأكثر طلباً</p>
+                    <div class="selection-indicator"></div>
+                </div>
+
+                <div class="skin-card" data-type="all">
+                    <div class="skin-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>جميع انواع البشره</h3>
+                    <p>منتجات تناسب جميع أنواع البشرة</p>
+                    <div class="selection-indicator"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content-section" data-type="oily" style="display: none;">
+        <h2>منتجات البشرة الدهنية</h2>
+        <p>اكتشف أفضل المنتجات لتنظيم الإفرازات الدهنية والحفاظ على بشرتك نظيفة وصحية.</p>
+    </div>
+
+    <div class="content-section" data-type="dry" style="display: none;">
+        <h2>منتجات البشرة الجافة</h2>
+        <p>مرطبات عميقة ومنتجات مغذية للبشرة الجافة لتبقى ناعمة ومشرقة.</p>
+    </div>
+
+    <div class="content-section" data-type="combination" style="display: none;">
+        <h2>منتجات البشرة المختلطة</h2>
+        <p>حلول متوازنة للعناية بالمناطق الدهنية والجافة في بشرتك.</p>
+    </div>
+
+    <div class="content-section" data-type="bestseller" style="display: block;">
+        <h2>الأكثر مبيعاً</h2>
+        <p>تعرف على منتجاتنا الأكثر طلباً والمفضلة لدى عملائنا.</p>
+    </div>
+
+    <section class="product-filters">
+        <div class="container">
+            <div class="filter-group">
+                <label for="category-filter"><i class="fas fa-filter"></i> تصفية حسب:</label>
+                <select id="category-filter">
+                    <option value="all">جميع الفئات</option>
+                    <option value="cleansers">منظفات</option>
+                    <option value="moisturizers">مرطبات</option>
+                    <option value="serums">سيروم</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="price-filter"><i class="fas fa-tags"></i> نطاق السعر:</label>
+                <select id="price-filter">
+                    <option value="all">الكل</option>
+                    <option value="0-100">حتى 100 ج.م</option>
+                    <option value="100-250">100 - 250 ج.م</option>
+                    <option value="250+">أكثر من 250 ج.م</option>
+                </select>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="ابحث عن منتج...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-grid">
+        <div class="container">
+            
+            <div class="product-card dry" data-price="250">
+                <div class="product-image">
+                    <img src="images/dry/1.jpeg" alt="منتج 1">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 1</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span>(90)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">250 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card dry" data-price="175">
+                <div class="product-image">
+                    <img src="images/dry/2.jpeg" alt="منتج 2">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 2</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(95)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">175 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bestseller" data-price="55">
+                <div class="product-image">
+                    <img src="images/all/1.jpeg" alt="منتج 1">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 1</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span>(85)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">55 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>هذا المنتج مثالي للبشرة الدهنية، يساعد على تقليل الإفرازات الدهنية وتنظيف المسام بعمق.</p>
+                </div>
+            </div>
+
+            <div class="product-card bestseller" data-price="65">
+                <div class="product-image">
+                    <img src="images/all/2.jpeg" alt="منتج 2">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 2</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(90)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">65 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>هذا المنتج مثالي للبشرة الدهنية، يساعد على تقليل الإفرازات الدهنية وتنظيف المسام بعمق.</p>
+                </div>
+            </div>
+
+            <div class="product-card bestseller" data-price="75">
+                <div class="product-image">
+                    <img src="images/all/3.jpeg" alt="منتج 3">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 3</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(95)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">75 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>هذا المنتج مثالي للبشرة الدهنية، يساعد على تقليل الإفرازات الدهنية وتنظيف المسام بعمق.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="480">
+                <div class="product-image">
+                    <img src="images/all/1.jpeg" alt="منتج 1">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 1</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span>(87)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">480 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>هذا المنتج مثالي لجميع أنواع البشرة، يساعد على ترطيب البشرة بعمق.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="475">
+                <div class="product-image">
+                    <img src="images/all/2.jpeg" alt="منتج 2">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 2</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(102)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">475 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>منتج طبيعي 100% يساعد على تحسين ملمس البشرة وإشراقتها.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="405">
+                <div class="product-image">
+                    <img src="images/all/3.jpeg" alt="منتج 3">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 3</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(150)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">405 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>يعمل على تغذية البشرة وحمايتها من الجفاف.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="350">
+                <div class="product-image">
+                    <img src="images/all/4.jpeg" alt="منتج 4">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 4</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span>(98)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">350 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>منتج مثالي للاستخدام اليومي لجميع أنواع البشرة.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="350">
+                <div class="product-image">
+                    <img src="images/all/5.jpeg" alt="منتج 5">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 5</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(120)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">350 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>يمنح البشرة ترطيباً عميقاً ويحافظ على نضارتها.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="155">
+                <div class="product-image">
+                    <img src="images/all/6.jpeg" alt="منتج 6">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 6</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span>(95)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">155 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>منتج مثالي لترطيب البشرة وحمايتها من الجفاف.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="400">
+                <div class="product-image">
+                    <img src="images/all/7.jpeg" alt="منتج 7">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 7</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(110)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">400 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>يعمل على تحسين ملمس البشرة وإشراقتها.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="325">
+                <div class="product-image">
+                    <img src="images/all/8.jpeg" alt="منتج 8">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 8</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span>(88)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">325 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>منتج طبيعي يساعد على تغذية البشرة بعمق.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="500">
+                <div class="product-image">
+                    <img src="images/all/9.jpeg" alt="منتج 9">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 9</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(120)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">500 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>يمنح البشرة ترطيباً عميقاً ويحافظ على نضارتها.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="390">
+                <div class="product-image">
+                    <img src="images/all/10.jpeg" alt="منتج 10">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 10</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(140)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">390 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>منتج مثالي لجميع أنواع البشرة، يساعد على تحسين مرونتها.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="145">
+                <div class="product-image">
+                    <img src="images/all/11.jpeg" alt="منتج 11">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 11</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(160)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">145 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>يعمل على حماية البشرة من العوامل البيئية الضارة.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="400">
+                <div class="product-image">
+                    <img src="images/all/12.jpeg" alt="منتج 12">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 12</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(130)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">400 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>منتج يساعد على تحسين نضارة البشرة وحمايتها من الجفاف.</p>
+                </div>
+            </div>
+
+            <div class="product-card all" data-price="250">
+                <div class="product-image">
+                    <img src="images/all/14.jpeg" alt="منتج 14">
+                    <div class="quick-view">معاينة سريعة</div>
+                </div>
+                <div class="product-info">
+                    <h3>منتج 14</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(170)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">250 ج.م</span>
+                    </div>
+                    <button class="add-to-cart">أضف إلى السلة</button>
+                </div>
+                <div class="product-description">
+                    <p>منتج مثالي لجميع أنواع البشرة، يساعد على ترطيبها وحمايتها.</p>
+                </div>
+            </div>
+
+            <div class="product-card oily" data-price="325">
+                <div class="product-image">
+                    <img src="images/oily/1.jpeg" alt="منتج 1">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 1</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span>(85)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">325 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card oily" data-price="125">
+                <div class="product-image">
+                    <img src="images/oily/2.jpeg" alt="منتج 2">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 2</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(90)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">125 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card oily" data-price="250">
+                <div class="product-image">
+                    <img src="images/oily/3.jpeg" alt="منتج 3">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 3</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(95)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">250 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card oily" data-price="130">
+                <div class="product-image">
+                    <img src="images/oily/4.jpeg" alt="منتج 4">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 4</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(100)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">130 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card oily" data-price="80">
+                <div class="product-image">
+                    <img src="images/oily/5.jpeg" alt="منتج 5">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 5</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(110)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">80 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card combination" data-price="480">
+                <div class="product-image">
+                    <img src="images/mixed/1.jpeg" alt="منتج 1">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 1</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                        <span>(88)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">480 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card combination" data-price="475">
+                <div class="product-image">
+                    <img src="images/mixed/2.jpeg" alt="منتج 2">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 2</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(92)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">475 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card combination" data-price="405">
+                <div class="product-image">
+                    <img src="images/mixed/3.jpeg" alt="منتج 3">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 3</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(97)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">405 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card combination" data-price="350">
+                <div class="product-image">
+                    <img src="images/mixed/4.jpeg" alt="منتج 4">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 4</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(102)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">350 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card combination" data-price="155">
+                <div class="product-image">
+                    <img src="images/mixed/5.jpeg" alt="منتج 5">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 5</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(110)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">155 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card combination" data-price="85">
+                <div class="product-image">
+                    <img src="images/mixed/5.jpeg" alt="منتج 5">
+                </div>
+                <div class="product-info">
+                    <h3>منتج 5</h3>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class "fas fa-star"></i>
+                        <span>(110)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">85 ج.م</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="quick-view-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product">
+                <div class="modal-product-image">
+                    <img id="modal-product-img" src="" alt="">
+                </div>
+                <div class="modal-product-info">
+                    <h2 id="modal-product-name"></h2>
+                    <div class="modal-product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(0)</span>
+                    </div>
+                    <div class="modal-product-price" id="modal-product-price"></div>
+                    <p class="modal-product-description">هذا المنتج مصنوع من مكونات طبيعية 100% ومناسب للبشرة الحساسة. خالي من المواد الكيميائية الضارة.</p>
+                    <div class="modal-product-actions">
+                        <button class="add-to-cart">أضف إلى السلة</button>
+                        <button class="buy-now">اشتري الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
